@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moses Adundo - ICT Specialist Resume</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 20px auto;
+            background: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 300;
+        }
+
+        .header .title {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-size: 0.95rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .content {
+            padding: 0 40px 40px 40px;
+        }
+
+        .section {
+            margin-bottom: 35px;
+        }
+
+        .section-title {
+            color: #2c3e50;
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            padding-bottom: 8px;
+            border-bottom: 3px solid #3498db;
+            position: relative;
+        }
+
+        .objective {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+            font-style: italic;
+            margin-bottom: 30px;
+        }
+
+        .experience-item, .education-item {
+            margin-bottom: 25px;
+            padding: 20px;
+            background: #fdfdfd;
+            border-radius: 8px;
+            border-left: 4px solid #e3f2fd;
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+        }
+
+        .job-title {
+            font-weight: 600;
+            color: #2c3e50;
+            font-size: 1.1rem;
+        }
+
+        .company {
+            color: #3498db;
+            font-weight: 500;
+        }
+
+        .duration {
+            color: #666;
+            font-style: italic;
+            background: #e8f4f8;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        .achievement-category {
+            font-weight: 600;
+            color: #2c3e50;
+            margin: 15px 0 8px 0;
+            font-size: 1.05rem;
+        }
+
+        .achievements {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .achievements li {
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .achievements li:before {
+            content: '▶';
+            color: #3498db;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-category {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border-top: 3px solid #3498db;
+        }
+
+        .skill-category h4 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .skill-tag {
+            background: #3498db;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .projects-grid {
+            display: grid;
+            gap: 20px;
+        }
+
+        .project-item {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #27ae60;
+        }
+
+        .project-title {
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .certifications-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+        }
+
+        .cert-item {
+            background: #e8f5e8;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #27ae60;
+        }
+
+        .highlight {
+            background: #fff3cd;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        .impact-metric {
+            color: #e74c3c;
+            font-weight: 700;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+            }
+            
+            .content {
+                padding: 0 20px 30px 20px;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+            
+            .job-header {
+                flex-direction: column;
+                gap: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Moses Adundo</h1>
+            <div class="title">Senior ICT Specialist & Full-Stack Developer</div>
+            <div class="contact-info">
+                <div class="contact-item">📍 Kisumu, Kenya</div>
+                <div class="contact-item">📞 +254 708 877 719</div>
+                <div class="contact-item">✉️ adundomusa@outlook.com</div>
+                <div class="contact-item">🔗 linkedin.com/in/moses-adundo-025aaa224</div>
+                <div class="contact-item">💻 github.com/Adundo-Maseno</div>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="objective">
+                <strong>Professional Summary:</strong> Results-driven ICT Specialist with <span class="highlight">5+ years</span> of proven expertise in IT infrastructure management, automation development, and full-stack solutions. Demonstrated success in <span class="impact-metric">improving system efficiency by 50%</span>, <span class="impact-metric">maintaining 99% uptime</span> across 500+ devices, and <span class="impact-metric">increasing organizational performance by 40%</span> through innovative digital solutions. Specializes in Python automation, cloud computing, network security, and data-driven decision making.
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Professional Experience</h2>
+                
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">Senior ICT Specialist</div>
+                            <div class="company">Ministry of Education, Kenya (Homa Bay County)</div>
+                        </div>
+                        <div class="duration">Jun 2023 – May 2025</div>
+                    </div>
+                    <p><em>Leading county-wide IT transformation initiatives and data-driven educational solutions across 9 sub-counties.</em></p>
+                    
+                    <div class="achievement-category">🏗️ Infrastructure & Systems Management</div>
+                    <ul class="achievements">
+                        <li>Architected and maintained IT infrastructure serving <span class="impact-metric">500+ devices</span> across 9 sub-counties, achieving <span class="impact-metric">99% uptime SLA</span></li>
+                        <li>Optimized incident response protocols, resolving <span class="impact-metric">95% of support tickets within 24 hours</span>, including OS deployments, software installations, and system configurations</li>
+                        <li>Implemented proactive maintenance strategies, <span class="impact-metric">reducing system downtime by 25%</span> through strategic hardware/software troubleshooting</li>
+                        <li>Designed and deployed enterprise network configurations, security patches, and antivirus management systems</li>
+                    </ul>
+
+                    <div class="achievement-category">🤖 Automation & Process Optimization</div>
+                    <ul class="achievements">
+                        <li>Engineered Python automation scripts integrated with Google Workspace APIs, <span class="impact-metric">reducing manual data processing time by 50%</span></li>
+                        <li>Developed proprietary UIC validation tool using Python, achieving <span class="impact-metric">99% error correction rate</span> and ensuring <span class="impact-metric">100% audit compliance</span> across all educational institutions</li>
+                        <li>Automated SPSS-based exam analytics workflows, <span class="impact-metric">accelerating report generation from 1 week to 2 hours</span></li>
+                    </ul>
+
+                    <div class="achievement-category">💻 Application Development & Digital Transformation</div>
+                    <ul class="achievements">
+                        <li>Architected and deployed Google Web Applications (JavaScript/HTML/CSS) for field data collection, <span class="impact-metric">improving compliance rates by 40%</span></li>
+                        <li>Built responsive data collection platforms with Google Sheets integration, streamlining county-wide data management</li>
+                        <li>Created interactive dashboards and analytics tools for educational performance monitoring</li>
+                    </ul>
+
+                    <div class="achievement-category">📊 Strategic Analytics & Impact</div>
+                    <ul class="achievements">
+                        <li>Implemented data visualization dashboards identifying underperforming schools, enabling targeted interventions that <span class="impact-metric">increased county-wide pass rates by 12%</span></li>
+                        <li>Delivered actionable insights supporting educational policy decisions affecting <span class="impact-metric">800+ schools</span></li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">Security Systems Specialist</div>
+                            <div class="company">JRS Systems</div>
+                        </div>
+                        <div class="duration">Nov 2022 – May 2023</div>
+                    </div>
+                    <ul class="achievements">
+                        <li>Successfully deployed <span class="impact-metric">50+ comprehensive security systems</span> including IP cameras, motion sensors, and structured cabling infrastructure</li>
+                        <li>Optimized project delivery timelines by <span class="impact-metric">20%</span> through efficient installation methodologies and resource management</li>
+                        <li>Configured advanced CCTV and IP camera systems with custom performance optimization, <span class="impact-metric">reducing client-reported issues by 35%</span></li>
+                        <li>Implemented enterprise-grade security solutions with seamless integration and 24/7 monitoring capabilities</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">ICT Systems Engineer</div>
+                            <div class="company">Quadworks Enterprises</div>
+                        </div>
+                        <div class="duration">Jul 2021 – Oct 2022</div>
+                    </div>
+                    <ul class="achievements">
+                        <li>Engineered and installed <span class="impact-metric">100+ IP surveillance systems</span>, VoIP telephone networks, and NVR/DVR/PBX infrastructures</li>
+                        <li>Developed custom Python automation tools using Selenium framework, <span class="impact-metric">reducing manual workflow processes by 40%</span></li>
+                        <li>Maintained exceptional service standards with <span class="impact-metric">2-hour average SLA resolution</span> for <span class="impact-metric">200+ user support requests</span></li>
+                        <li>Provided comprehensive technical support for hardware troubleshooting, printer maintenance, and user training</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">Network Engineer Intern</div>
+                            <div class="company">Bithost/Ambratel Technologies</div>
+                        </div>
+                        <div class="duration">May 2018 – Aug 2018</div>
+                    </div>
+                    <ul class="achievements">
+                        <li>Configured secure network infrastructures for <span class="impact-metric">30+ enterprise clients</span>, maintaining <span class="impact-metric">99% connectivity uptime</span></li>
+                        <li>Developed and deployed client websites using modern web technologies (HTML5/CSS3/JavaScript), <span class="impact-metric">improving client satisfaction scores by 25%</span></li>
+                        <li>Executed CCTV installation and maintenance projects with focus on security optimization</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Education</h2>
+                <div class="education-item">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">Bachelor of Science in Computer Science</div>
+                            <div class="company">Maseno University</div>
+                        </div>
+                        <div class="duration">Aug 2015 – Dec 2021</div>
+                    </div>
+                    <p><strong>Relevant Coursework:</strong> Machine Learning & AI, Network Security & Cryptography, Advanced Data Structures & Algorithms, Cloud Computing Architecture, Database Management Systems, Software Engineering, Computer Networks</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Technical Expertise</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h4>Programming & Development</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">Java</span>
+                            <span class="skill-tag">SQL</span>
+                            <span class="skill-tag">Go</span>
+                            <span class="skill-tag">PHP</span>
+                            <span class="skill-tag">React</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Web Development & APIs</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">React.js</span>
+                            <span class="skill-tag">Flask</span>
+                            <span class="skill-tag">REST APIs</span>
+                            <span class="skill-tag">HTML5/CSS3</span>
+                            <span class="skill-tag">Tailwind CSS</span>
+                            <span class="skill-tag">Node.js</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Database & Analytics</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">MongoDB</span>
+                            <span class="skill-tag">MySQL</span>
+                            <span class="skill-tag">SQLite</span>
+                            <span class="skill-tag">SPSS</span>
+                            <span class="skill-tag">Excel Advanced</span>
+                            <span class="skill-tag">Google Sheets API</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h4>DevOps & Cloud Technologies</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Docker</span>
+                            <span class="skill-tag">Kubernetes</span>
+                            <span class="skill-tag">Git/GitHub</span>
+                            <span class="skill-tag">CI/CD</span>
+                            <span class="skill-tag">Cloud Computing</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h4>AI/ML & Automation</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">TensorFlow</span>
+                            <span class="skill-tag">Machine Learning</span>
+                            <span class="skill-tag">Selenium</span>
+                            <span class="skill-tag">Process Automation</span>
+                            <span class="skill-tag">Data Mining</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Infrastructure & Security</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Network Security</span>
+                            <span class="skill-tag">CCTV Systems</span>
+                            <span class="skill-tag">VoIP/PBX</span>
+                            <span class="skill-tag">Structured Cabling</span>
+                            <span class="skill-tag">System Administration</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Key Projects & Innovations</h2>
+                <div class="projects-grid">
+                    <div class="project-item">
+                        <div class="project-title">🔧 Educational Data Management Suite</div>
+                        <p><strong>Impact:</strong> <span class="impact-metric">Automated 99% of UIC validation errors</span> county-wide, ensuring perfect audit compliance</p>
+                        <p><strong>Technologies:</strong> Python, Google Apps Script, Data Validation Algorithms</p>
+                        <p>Developed comprehensive validation tools adopted across all county educational institutions for critical data integrity management.</p>
+                    </div>
+                    
+                    <div class="project-item">
+                        <div class="project-title">📊 Real-time Analytics Dashboards</div>
+                        <p><strong>Impact:</strong> <span class="impact-metric">Accelerated report generation by 95%</span> (1 week → 2 hours)</p>
+                        <p><strong>Technologies:</strong> SPSS, Excel Automation, Data Visualization</p>
+                        <p>Created interactive dashboards providing actionable insights for 800+ schools, directly contributing to improved educational outcomes.</p>
+                    </div>
+                    
+                    <div class="project-item">
+                        <div class="project-title">🌐 Digital Data Collection Platforms</div>
+                        <p><strong>Impact:</strong> <span class="impact-metric">Increased field compliance by 40%</span></p>
+                        <p><strong>Links:</strong> 
+                            <a href="https://tinyurl.com/2mm3pmn8" target="_blank">CEMASTEA Training Portal</a> | 
+                            <a href="https://tinyurl.com/y3wmyue9" target="_blank">Social Impact Data Tool</a>
+                        </p>
+                        <p><strong>Technologies:</strong> HTML5, JavaScript, Tailwind CSS, Google Sheets API</p>
+                        <p>Built responsive web applications for critical data collection including financial information and social impact metrics.</p>
+                    </div>
+                    
+                    <div class="project-item">
+                        <div class="project-title">🎥 Media Processing Tool</div>
+                        <p><strong>Innovation:</strong> TikTok Video Downloader (Watermark-free)</p>
+                        <p><strong>Technologies:</strong> Python, Web Scraping, Media Processing APIs</p>
+                        <p>Developed custom media processing solution demonstrating advanced API integration and content manipulation capabilities.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Professional Certifications</h2>
+                <div class="certifications-list">
+                    <div class="cert-item">
+                        <strong>Andela React Development Program</strong><br>
+                        <em>Advanced React.js & Modern Frontend Development</em>
+                    </div>
+                    <div class="cert-item">
+                        <strong>Yeastar P-Series Certified Technician</strong><br>
+                        <em>Enterprise VoIP & PBX Systems Specialist</em>
+                    </div>
+                    <div class="cert-item">
+                        <strong>ITIL Foundation Certification</strong><br>
+                        <em>IT Service Management & Best Practices</em>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Core Competencies</h2>
+                <div class="skill-tags" style="display: flex; flex-wrap: wrap; gap: 10px;">
+                    <span class="skill-tag">Agile Project Management</span>
+                    <span class="skill-tag">Cross-functional Leadership</span>
+                    <span class="skill-tag">Technical Problem Solving</span>
+                    <span class="skill-tag">User Training & Support</span>
+                    <span class="skill-tag">Data-Driven Decision Making</span>
+                    <span class="skill-tag">Process Optimization</span>
+                    <span class="skill-tag">Stakeholder Management</span>
+                    <span class="skill-tag">Digital Transformation</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
